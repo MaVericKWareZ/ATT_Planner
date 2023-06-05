@@ -2,6 +2,7 @@ from django.db import models
 
 from att_planner.commons.models import CreatedModified
 from att_planner.planner.models.bucket import Bucket
+from att_planner.planner.models.user import User
 
 
 class Task(CreatedModified):
@@ -18,10 +19,11 @@ class Task(CreatedModified):
     start_date = models.DateTimeField(auto_now_add=True)
     end_date = models.DateTimeField(null=True, blank=True)
     bucket = models.ForeignKey(Bucket, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
 
     def __str__(self) -> str:
         return f'({self.id}: {self.name}, {self.progress}, {self.description}, {self.priority},' \
-               f' {self.start_date}, {self.end_date})'
+               f' {self.start_date}, {self.end_date}, {self.user}, {self.bucket})'
 
     class Meta:
         db_table = 'task'
