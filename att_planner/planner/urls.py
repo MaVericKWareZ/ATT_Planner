@@ -12,6 +12,9 @@ router.register('tasks', TaskViewSet)
 router.register('users', UserViewSet)
 router.register('buckets', BucketViewSet)
 
-urlpatterns = [path('', index, name='index'), path('buckets/<id>/tasks', BucketTasksView.as_view(), name='upload')]
+urlpatterns = [
+    path('', index, name='index'),
+    path('buckets/<id>/tasks', BucketTasksView.as_view(), name='bucketTasks')
+]
 
 urlpatterns += router.urls
