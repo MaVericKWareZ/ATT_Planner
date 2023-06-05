@@ -1,0 +1,19 @@
+version: '3.9'
+
+services:
+
+  db:
+    image: postgres:14.2-alpine
+    restart: always
+    ports:
+      - '5432:5432'
+    environment:
+      POSTGRES_DB: annotation_tool_local
+      POSTGRES_USER: annotation_tool_local
+      POSTGRES_PASSWORD: password
+    volumes:
+      - psql-data:/var/lib/postgresql/data
+
+volumes:
+  psql-data:
+    driver: local
