@@ -29,6 +29,7 @@ INSTALLED_APPS = [
     'storages',
 
     # Apps
+    'att_planner.planner.apps.PlannerConfig',
 ]
 
 MIDDLEWARE = [

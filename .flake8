@@ -17,3 +17,4 @@ per-file-ignores =
     att_planner/manage.py:Q000
     att_planner/project/settings/templates/settings.dev.py:F821
     att_planner/planner/migrations/*:Q000,
+    att_planner/planner/models/__init__.py:F401
