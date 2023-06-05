@@ -23,7 +23,7 @@ RUN poetry install --no-root
 
 # Copy project files
 COPY ["README.rst", "Makefile", "./"]
-COPY farmrise_annotationtool_backend farmrise_annotationtool_backend
+COPY att_planner att_planner
 COPY local local
 
 # Expose the Django development server port (adjust if needed)
